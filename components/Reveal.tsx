@@ -7,12 +7,11 @@ type Props = {
   delay?: number
   direction?: 'up' | 'left' | 'none'
   className?: string
-  as?: keyof JSX.IntrinsicElements
 }
 
-export default function Reveal({ children, delay = 0, direction = 'up', className = '', as = 'div' }: Props) {
+export default function Reveal({ children, delay = 0, direction = 'up', className = '' }: Props) {
   const [shown, setShown] = useState(false)
-  const ref = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!ref.current) return
@@ -42,10 +41,8 @@ export default function Reveal({ children, delay = 0, direction = 'up', classNam
         : 'none'
     : 'none'
 
-  const Tag = as as keyof JSX.IntrinsicElements
   return (
-    // @ts-expect-error ref polymorphism
-    <Tag
+    <div
       ref={ref}
       className={className}
       style={{
@@ -56,6 +53,6 @@ export default function Reveal({ children, delay = 0, direction = 'up', classNam
       }}
     >
       {children}
-    </Tag>
+    </div>
   )
 }
