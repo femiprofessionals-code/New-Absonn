@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { getSupabase } from '@/lib/supabase'
 
 const REQUIRED_FIELDS = [
   'organization_name',
@@ -53,6 +53,7 @@ export async function POST(request: Request) {
       user_agent: userAgent,
     }
 
+    const supabase = getSupabase()
     const { data, error } = await supabase.from('consultation_requests').insert([payload]).select()
 
     if (error) {

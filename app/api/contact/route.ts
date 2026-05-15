@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { getSupabase } from '@/lib/supabase'
 
 export async function POST(request: Request) {
   try {
@@ -16,6 +16,7 @@ export async function POST(request: Request) {
       request.headers.get('x-real-ip') ||
       null
 
+    const supabase = getSupabase()
     const { data, error } = await supabase
       .from('contact_form_submissions')
       .insert([
@@ -32,12 +33,12 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error('Supabase error:', error)
-      return NextResponse.json({ error: 'Failed to submit form' }, { status: 500 })
+      return NextResponse.json({ error: 'Failed to submit contact form' }, { status: 500 })
     }
 
     return NextResponse.json({ success: true, data: data?.[0] })
   } catch (err) {
-    console.error('Contact form error:', err)
+    console.error('Contact error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
