@@ -7,7 +7,7 @@ import HeroBlob from '@/components/HeroBlob'
 export default function HomePage() {
   return (
     <>
-      <section className="pt-36 lg:pt-44 pb-20 lg:pb-24 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 lg:pt-44 pb-14 sm:pb-20 lg:pb-24 relative overflow-hidden">
         <HeroBlob />
         <div className="shell relative">
           <Reveal>
@@ -17,7 +17,7 @@ export default function HomePage() {
             </span>
           </Reveal>
 
-          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-20 items-center mt-10">
+          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-20 items-center mt-7 sm:mt-10">
             <div>
               <Reveal delay={80}>
                 <h1 className="text-balance">
@@ -28,18 +28,18 @@ export default function HomePage() {
                 </h1>
               </Reveal>
               <Reveal delay={160}>
-                <p className="lede mt-8 max-w-2xl">
+                <p className="lede mt-6 sm:mt-8 max-w-2xl">
                   Delivering world-class back-office and strategic CFO advisory to non-profits worldwide. Empowering you to focus on impact, not infrastructure.
                 </p>
               </Reveal>
               <Reveal delay={240}>
-                <div className="mt-11 flex flex-wrap gap-3.5 items-center">
+                <div className="mt-8 sm:mt-11 flex flex-wrap gap-3 sm:gap-3.5 items-center">
                   <Link href="/schedule" className="btn-primary">Transform Your Operations<Arrow /></Link>
                   <Link href="/services" className="btn-secondary">Explore Services</Link>
                 </div>
               </Reveal>
               <Reveal delay={320}>
-                <div className="mt-14 pt-8 border-t border-rule grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-6">
+                <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-rule grid grid-cols-2 sm:grid-cols-4 gap-x-5 sm:gap-x-6 gap-y-5 sm:gap-y-6">
                   {[
                     { label: 'SEC Compliant', icon: 'shield' },
                     { label: '150+ Organizations', icon: 'users' },
@@ -59,17 +59,17 @@ export default function HomePage() {
 
             <Reveal delay={200}>
               <aside className="bg-white border border-rule rounded-sm overflow-hidden shadow-card">
-                <div className="bg-gradient-to-br from-navy to-navy-deep text-white px-8 py-8 relative overflow-hidden">
+                <div className="bg-gradient-to-br from-navy to-navy-deep text-white px-6 sm:px-8 py-7 sm:py-8 relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
                   <span className="eyebrow eyebrow-light !text-white/70 mb-4">Why Absonn</span>
-                  <h3 className="font-serif text-2xl font-normal leading-snug text-white mt-3">
+                  <h3 className="font-serif text-xl sm:text-2xl font-normal leading-snug text-white mt-3">
                     Fortune 500-caliber finance operations for organizations changing the world.
                   </h3>
                   <p className="mt-4 text-sm text-white/75 leading-relaxed">
                     From foundational bookkeeping to strategic CFO leadership. We scale with you as your organization grows.
                   </p>
                 </div>
-                <div className="px-8 py-7">
+                <div className="px-6 sm:px-8 py-6 sm:py-7">
                   <ul className="divide-y divide-rule-soft">
                     {[
                       ['Back-Office', 'Comprehensive Support'],
@@ -85,7 +85,7 @@ export default function HomePage() {
                     ))}
                   </ul>
                 </div>
-                <div className="px-8 py-4 bg-paper-warm border-t border-rule flex items-center justify-between gap-4 text-xs text-slate">
+                <div className="px-6 sm:px-8 py-4 bg-paper-warm border-t border-rule flex items-center justify-between gap-4 text-xs text-slate">
                   <span className="inline-flex items-center gap-1.5 text-navy font-medium"><Check />Mission-aligned</span>
                   <span>Global Reach</span>
                 </div>
@@ -95,15 +95,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-paper-warm border-y border-rule py-20 lg:py-24">
+      <section className="bg-paper-warm border-y border-rule py-14 sm:py-20 lg:py-24">
         <div className="shell">
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
               <span className="eyebrow justify-center">Results That Speak For Themselves</span>
-              <h2 className="mt-5">Trusted worldwide. <em className="italic text-navy font-normal">Proven excellence.</em></h2>
+              <h2 className="mt-4 sm:mt-5">Trusted worldwide. <em className="italic text-navy font-normal">Proven excellence.</em></h2>
             </div>
           </Reveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-4">
             {[
               { value: 150, prefix: '', suffix: '+', label: 'Non-Profits Served' },
               { value: 500, prefix: '$', suffix: 'M+', label: 'Assets Managed' },

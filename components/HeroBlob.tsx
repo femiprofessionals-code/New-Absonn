@@ -8,6 +8,13 @@ export default function HeroBlob() {
   useEffect(() => {
     const el = ref.current
     if (!el) return
+
+    // Skip parallax on touch devices and small screens
+    const isTouch = window.matchMedia('(hover: none)').matches
+    const isSmall = window.innerWidth < 768
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (isTouch || isSmall || reduced) return
+
     let raf = 0
     let targetX = 0
     let targetY = 0

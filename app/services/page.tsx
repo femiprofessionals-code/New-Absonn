@@ -5,7 +5,7 @@ import HeroBlob from '@/components/HeroBlob'
 export default function ServicesPage() {
   return (
     <>
-      <section className="pt-36 lg:pt-44 pb-16 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 lg:pt-44 pb-12 sm:pb-16 relative overflow-hidden">
         <HeroBlob />
         <div className="shell relative">
           <div className="max-w-4xl">

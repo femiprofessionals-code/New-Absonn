@@ -115,7 +115,7 @@ export default function SchedulePage() {
 
   return (
     <>
-      <section className="pt-36 lg:pt-44 pb-12 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 lg:pt-44 pb-10 sm:pb-12 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute top-0 right-[-10%] w-[60%] h-full opacity-40 pointer-events-none"
@@ -155,10 +155,10 @@ export default function SchedulePage() {
               </div>
             </Reveal>
           ) : (
-            <div className="grid lg:grid-cols-[3fr_9fr] gap-10 lg:gap-16">
+            <div className="grid lg:grid-cols-[3fr_9fr] gap-8 sm:gap-10 lg:gap-16">
               <aside className="lg:sticky lg:top-32 lg:self-start">
                 <p className="text-[0.6875rem] font-semibold tracking-[0.14em] uppercase text-slate">Progress</p>
-                <ol className="mt-6 space-y-5">
+                <ol className="mt-5 sm:mt-6 space-y-4 sm:space-y-5">
                   {['Organization Basics', 'Organization Profile', 'Services & Challenges'].map((s, i) => {
                     const n = i + 1
                     const active = step === n
@@ -213,8 +213,8 @@ export default function SchedulePage() {
                       <Select value={data.org_type} onChange={(v) => update('org_type', v)} options={ORG_TYPES} placeholder="Select..." />
                     </Field>
 
-                    <div className="pt-6 flex justify-end">
-                      <button type="button" onClick={() => setStep(2)} disabled={!canNext1} className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed">
+                    <div className="pt-6 flex sm:justify-end">
+                      <button type="button" onClick={() => setStep(2)} disabled={!canNext1} className="btn-primary w-full sm:w-auto justify-center disabled:opacity-40 disabled:cursor-not-allowed">
                         Continue
                         <Arrow />
                       </button>
@@ -239,11 +239,11 @@ export default function SchedulePage() {
                       </Field>
                     </div>
 
-                    <div className="pt-6 flex flex-wrap justify-between gap-3">
-                      <button type="button" onClick={() => setStep(1)} className="btn-secondary">
+                    <div className="pt-6 grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-between gap-3">
+                      <button type="button" onClick={() => setStep(1)} className="btn-secondary justify-center">
                         <ArrowBack /> Back
                       </button>
-                      <button type="button" onClick={() => setStep(3)} disabled={!canNext2} className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed">
+                      <button type="button" onClick={() => setStep(3)} disabled={!canNext2} className="btn-primary justify-center disabled:opacity-40 disabled:cursor-not-allowed">
                         Continue
                         <Arrow />
                       </button>
@@ -282,11 +282,11 @@ export default function SchedulePage() {
                       <div className="border-l-2 border-red-700 bg-red-50 p-4 text-sm text-red-800 rounded-sm">{errorMsg}</div>
                     )}
 
-                    <div className="pt-6 flex flex-wrap justify-between gap-3">
-                      <button type="button" onClick={() => setStep(2)} className="btn-secondary">
+                    <div className="pt-6 grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-between gap-3">
+                      <button type="button" onClick={() => setStep(2)} className="btn-secondary justify-center">
                         <ArrowBack /> Back
                       </button>
-                      <button type="submit" disabled={!canSubmit || status === 'loading'} className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed">
+                      <button type="submit" disabled={!canSubmit || status === 'loading'} className="btn-primary justify-center disabled:opacity-40 disabled:cursor-not-allowed">
                         {status === 'loading' ? 'Submitting…' : 'Submit & Schedule'}
                         <Arrow />
                       </button>

@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal'
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-36 lg:pt-44 pb-16 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 lg:pt-44 pb-12 sm:pb-16 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute top-0 right-[-10%] w-[60%] h-full opacity-40 pointer-events-none"

@@ -153,9 +153,48 @@
   }
   .marquee-track { animation: marquee 50s linear infinite; will-change: transform; }
   .marquee-track:hover { animation-play-state: paused; }
+
+  /* Logo load-in animation */
+  .logo-anim { transform-origin: left center; }
+  .logo-pre {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.96);
+    transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .logo-mounted {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+                scale 250ms ease-out;
+  }
+  /* Disable hover scaling on touch devices to prevent sticky hover */
+  @media (hover: none) {
+    .logo-mounted:hover { transform: translateY(0) scale(1); }
+  }
 }
 
 @layer utilities {
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
+
+  /* Mobile-tuned animations */
+  @media (max-width: 768px) {
+    .marquee-track { animation-duration: 80s; }
+    .float-gentle { animation-duration: 9s; }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track,
+    .float-gentle,
+    .pulse-dot::before {
+      animation: none !important;
+    }
+    .logo-pre, .logo-mounted {
+      transition: opacity 200ms ease !important;
+      transform: none !important;
+    }
+  }
 }

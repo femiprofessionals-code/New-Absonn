@@ -33,12 +33,13 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error('Supabase error:', error)
-      return NextResponse.json({ error: 'Failed to submit contact form' }, { status: 500 })
+      return NextResponse.json({ error: error.message, details: error }, { status: 500 })
     }
 
     return NextResponse.json({ success: true, data: data?.[0] })
   } catch (err) {
     console.error('Contact error:', err)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    const message = err instanceof Error ? err.message : 'Internal server error'
+    return NextResponse.json({ error: message }, { status: 500 })
   }
 }

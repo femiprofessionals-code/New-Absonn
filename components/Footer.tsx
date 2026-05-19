@@ -1,19 +1,16 @@
 import Link from 'next/link'
-import { Logomark } from './Navigation'
+import Logo from './Logo'
 
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="bg-navy-deep text-white/70 pt-20 pb-8 relative">
+    <footer className="bg-navy-deep text-white/70 pt-14 sm:pt-20 pb-8 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-white/10" />
       <div className="shell">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-[2.5fr_1fr_1fr_1fr] gap-12 pb-16 border-b border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-[2.5fr_1fr_1fr_1fr] gap-8 sm:gap-10 lg:gap-12 pb-10 sm:pb-16 border-b border-white/10">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 text-white">
-              <Logomark strokeColor="white" />
-              <span className="font-serif text-2xl font-medium leading-none">Absonn</span>
-            </Link>
+            <Logo variant="light" size="lg" animateOnMount={false} />
             <p className="mt-6 text-[0.9375rem] text-white/65 leading-relaxed max-w-sm">
               Institutional-grade finance operations for non-profit organizations, private foundations, and educational institutions.
             </p>
